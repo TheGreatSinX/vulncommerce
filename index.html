@@ -1,0 +1,84 @@
+<!-- VulnCommerce: OWASP Juice Shop Inspired Design + Enhanced Modern UI with Dark Mode, Animations & Modals -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VulnCommerce - Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+    }
+    function showModal(message) {
+      document.getElementById('modal-text').textContent = message;
+      document.getElementById('modal').classList.remove('hidden');
+    }
+    function closeModal() {
+      document.getElementById('modal').classList.add('hidden');
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-br from-zinc-50 to-white dark:from-zinc-900 dark:to-zinc-800 text-zinc-900 dark:text-zinc-100 font-sans antialiased transition-colors duration-300">
+  <header class="bg-indigo-700 dark:bg-indigo-900 shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <h1 class="text-3xl font-bold tracking-tight text-white">🧃 VulnCommerce</h1>
+      <nav class="space-x-8 text-base font-medium">
+        <a href="index.php" class="text-white hover:text-yellow-300 transition">Home</a>
+        <a href="products.php" class="text-white hover:text-yellow-300 transition">Products</a>
+        <a href="cart.php" class="text-white hover:text-yellow-300 transition">Cart</a>
+        <a href="admin/deface.php" class="text-red-300 hover:text-white transition">Admin</a>
+        <button onclick="toggleDarkMode()" class="text-sm px-3 py-1 border border-white rounded hover:bg-white hover:text-indigo-700 transition">🌓</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto py-20 px-6">
+    <section class="text-center mb-20">
+      <h2 class="text-5xl font-bold text-zinc-800 dark:text-white mb-4">Welcome to VulnCommerce</h2>
+      <p class="text-zinc-600 dark:text-zinc-300 text-xl max-w-3xl mx-auto">Experience hands-on learning in web security with a modern e-commerce simulation, inspired by OWASP Juice Shop.</p>
+    </section>
+
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div class="bg-white dark:bg-zinc-800 rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 overflow-hidden">
+        <img src="https://via.placeholder.com/400x240" alt="Smart Gadget" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2">Smart Gadget</h3>
+          <p class="text-zinc-500 dark:text-zinc-400 text-sm mb-4">Test SQL Injection vulnerabilities through the product interface.</p>
+          <button onclick="showModal('Smart Gadget added to cart!')" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg font-medium text-sm">View Product</button>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-zinc-800 rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 overflow-hidden">
+        <img src="https://via.placeholder.com/400x240" alt="Vulnerable Widget" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2">Vulnerable Widget</h3>
+          <p class="text-zinc-500 dark:text-zinc-400 text-sm mb-4">Explore reflected XSS vulnerabilities via cart manipulation.</p>
+          <button onclick="showModal('Vulnerable Widget added to cart!')" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg font-medium text-sm">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-zinc-800 rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition duration-300 overflow-hidden">
+        <img src="https://via.placeholder.com/400x240" alt="Checkout Simulation" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold mb-2">Checkout Simulation</h3>
+          <p class="text-zinc-500 dark:text-zinc-400 text-sm mb-4">Trigger CSRF vulnerability during simulated purchases.</p>
+          <button onclick="showModal('Checkout initiated...')" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg font-medium text-sm">Proceed to Checkout</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mt-24 bg-indigo-700 dark:bg-indigo-900 py-6 text-center text-white text-sm shadow-inner">
+    VulnCommerce 2025 &copy; Inspired by OWASP Juice Shop – Built for Ethical Hacking Labs
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm hidden flex items-center justify-center z-50">
+    <div class="bg-white dark:bg-zinc-800 text-zinc-800 dark:text-white p-6 rounded-lg shadow-lg text-center max-w-sm">
+      <p id="modal-text" class="mb-4 text-lg font-medium">Modal Content</p>
+      <button onclick="closeModal()" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded">Close</button>
+    </div>
+  </div>
+</body>
+</html>
